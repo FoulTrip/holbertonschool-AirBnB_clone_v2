@@ -42,22 +42,26 @@ class FileStorage:
         from models.city import City
         from models.amenity import Amenity
         from models.review import Review
+
         classes = {
-            'BaseModel': BaseModel, 'User': User, 'Place': Place,
-            'State': State, 'City': City, 'Amenity': Amenity,
-            'Review': Review
+            "BaseModel": BaseModel,
+            "User": User,
+            "Place": Place,
+            "State": State,
+            "City": City,
+            "Amenity": Amenity,
+            "Review": Review,
         }
         try:
             temp = {}
-            with open(FileStorage.__file_path, 'r') as f:
+            with open(FileStorage.__file_path, "r") as f:
                 temp = json.load(f)
                 for key, val in temp.items():
-                    self.all()[key] = classes[val['__class__']](**val)
+                    self.all()[key] = classes[val["__class__"]](**val)
         except FileNotFoundError:
             pass
 
     def delete(self, obj=None):
-
         """Removes an object from the storage dictionary"""
         from models.__init__ import storage
 
@@ -68,3 +72,7 @@ class FileStorage:
                 storage.save()
         else:
             return
+
+    def close(self):
+        """Call the reload method."""
+        self.reload()
