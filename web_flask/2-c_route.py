@@ -18,22 +18,15 @@ def HelloHBNB():
     return "Hello HBNB!"
 
 
-@app.route("/hbhb", strict_slashes=False)
-def HBHB():
-    """This function will be executed
-    when the root URL (“/hbhb”) is accessed.
-    """
+@app.route("/hbnb", strict_slashes=False)
+def hbnb():
+    """Displays 'HBNB'."""
     return "HBNB"
 
 
 @app.route("/c/<text>", strict_slashes=False)
-def C_text(text):
-    """This function will be executed when
-    the URL (“/c/<text>”) is accessed. The
-    text provided in the URL is displayed
-    after “C ”, with underscores replaced
-    by spaces.
-    """
+def c(text):
+    """Displays 'C' followed by the value of <text>."""
     text = text.replace("_", " ")
     return "C {}".format(text)
 

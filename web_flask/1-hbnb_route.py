@@ -8,8 +8,13 @@ app = Flask(__name__)
 
 
 @app.route("/", strict_slashes=False)
-def hello_hbnb():
-    """Displays 'Hello HBNB!'."""
+def HelloHBNB():
+    """This function will be executed
+    when the root URL (“/”) is accessed.
+
+    Returns:
+        str: returns a simple greeting.
+    """
     return "Hello HBNB!"
 
 
