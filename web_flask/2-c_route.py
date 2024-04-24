@@ -22,9 +22,6 @@ def HelloHBNB():
 def HBHB():
     """This function will be executed
     when the root URL (“/hbhb”) is accessed.
-
-    Returns:
-        str: returns a simple phrase.
     """
     return "HBNB"
 
@@ -36,16 +33,9 @@ def C_text(text):
     text provided in the URL is displayed
     after “C ”, with underscores replaced
     by spaces.
-
-    args:
-        text (str): The text provided in the URL
-
-    Returns:
-        str: Returns a string formatted with “C”
-        followed by the text provided.
     """
     text = text.replace("_", " ")
-    return f"C {text}"
+    return "C {}".format(text)
 
 
 if __name__ == "__main__":

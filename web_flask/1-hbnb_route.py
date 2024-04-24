@@ -6,6 +6,7 @@ script that starts a Flask web application
 from flask import Flask
 
 app = Flask(__name__)
+
 host = "0.0.0.0"
 port = 5000
 
@@ -25,9 +26,6 @@ def HelloHBNB():
 def hbnb():
     """This function will be executed
     when the root URL (“/hbhb”) is accessed.
-
-    Returns:
-        str: returns a simple phrase.
     """
     return "HBNB"
 
