@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+script that starts a Flask web application
+"""
 
 from flask import Flask
 
@@ -9,6 +12,12 @@ port = 5000
 
 @app.route("/", strict_slashes=False)
 def HelloHBNB():
+    """This function will be executed
+    when the root URL (“/”) is accessed.
+
+    Returns:
+        str: returns a simple greeting.
+    """
     return "Hello HBNB!"
 
 
