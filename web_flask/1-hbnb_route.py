@@ -22,7 +22,7 @@ def HelloHBNB():
 
 
 @app.route("/hbhb", strict_slashes=False)
-def HBHB():
+def hbnb():
     """This function will be executed
     when the root URL (“/hbhb”) is accessed.
 
