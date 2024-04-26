@@ -14,6 +14,7 @@ from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
 classes = [User, Place, State, City, Amenity, Review]
+
 class DBStorage:
     __engine = None
     __session = None
