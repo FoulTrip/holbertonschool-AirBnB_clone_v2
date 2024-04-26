@@ -7,8 +7,6 @@ from flask import Flask
 from flask import render_template
 
 app = Flask(__name__)
-app.jinja_env.trim_blocks = True
-app.jinja_env.lstrip_blocks = True
 
 
 @app.route("/", strict_slashes=False)
@@ -52,9 +50,13 @@ def number_template(n):
 
 @app.route("/number_odd_or_even/<int:n>", strict_slashes=False)
 def number_odd_or_even(n):
+    if n % 2 == 0:
+        state = "even"
+    else:
+        state = "odd"
     """Displays an HTML page only if <n> is an integer."""
-    return render_template("6-number_odd_or_even.html", n=n)
+    return render_template("6-number_odd_or_even.html", n=n, state=state)
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0", port=5000)
